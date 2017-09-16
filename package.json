@@ -1,0 +1,22 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "backpack",
+    "build": "backpack build"
+  },
+  "dependencies": {
+    "backpack-core": "^0.4.2",
+    "bluebird": "^3.5.0",
+    "dotenv": "^4.0.0",
+    "joi": "^11.0.1",
+    "jsonwebtoken": "^8.0.1",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^7.2.1",
+    "redis": "^2.8.0"
+  }
+}
