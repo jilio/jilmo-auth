@@ -8,7 +8,7 @@ env.config()
 
 const key = process.env.KEY
 
-async function generateTokens(username) {
+async function generatePair(username) {
   const accessToken = jwt.sign({ username }, key, { expiresIn: '10m' })
   const refreshToken = jwt.sign({ username }, key, { expiresIn: '30d' })
   const tokens = {
@@ -23,4 +23,15 @@ async function generateTokens(username) {
   return tokens
 }
 
-export default generateTokens
+async function getPayload(token) {
+  try {
+    const payload = await jwt.verifyAsync(token, key)
+    return payload
+  } catch (error) {
+    console.log('Cannot verify token:', token)
+  }
+
+  return {}
+}
+
+export default { generatePair, getPayload }

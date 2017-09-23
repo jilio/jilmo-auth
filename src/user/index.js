@@ -1,6 +1,7 @@
 import Joi from 'joi'
 import schema from './schema'
 import redis from '../redis'
+import Token from '../token'
 
 async function isAuthorized(request) {
   const { error, value } = Joi.validate(request, schema)
@@ -13,4 +14,11 @@ async function isAuthorized(request) {
   return providedPassword == correctPassword
 }
 
-export default { isAuthorized }
+async function hasValidRefreshToken(token) {
+  const { username } = await Token.getPayload(token)
+  const correctRefreshToken = await redis.getAsync(`${username}_refresh_token`)
+
+  return correctRefreshToken == token
+}
+
+export default { isAuthorized, hasValidRefreshToken }
