@@ -1,4 +1,4 @@
-import Joi from 'joi'
+import Joi from '@hapi/joi'
 import schema from './schema'
 import redis from '../redis'
 import Token from '../token'

@@ -1,4 +1,4 @@
-import Joi from 'joi'
+import Joi from '@hapi/joi'
 
 const schema = Joi.object().keys({
   username: Joi.string()
