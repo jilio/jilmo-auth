@@ -36,7 +36,6 @@ docker run -d \
   -e DRONE_RPC_SECRET=ca07cacac8f5 \
   -e DRONE_RUNNER_CAPACITY=2 \
   -e DRONE_RUNNER_NAME=${HOSTNAME} \
-  -e DRONE_LOGS_DEBUG=true \
   -p 3000:3000 \
   -v /var/run/docker.sock:/var/run/docker.sock \
   --restart always \
