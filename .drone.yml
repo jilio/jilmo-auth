@@ -1,0 +1,11 @@
+pipeline:
+  build:
+    image: node:latest
+    commands:
+      - yarn
+      - yarn build
+      # - yarn test
+
+services:
+  redis:
+    image: redis
