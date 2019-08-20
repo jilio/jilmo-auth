@@ -4,8 +4,3 @@ pipeline:
     commands:
       - yarn
       - yarn build
-      # - yarn test
-
-services:
-  redis:
-    image: redis
